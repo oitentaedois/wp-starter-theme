@@ -20,10 +20,10 @@ module.exports = function (prodDir) {
       .pipe(gulp.dest(prodDir));
   });
 
-  gulp.task('styles:watch', function () {
+  gulp.task('styles:watch', ['styles'], function () {
     return gulp.watch(filesSrc, ['styles']);
   });
 
-  return ['styles', 'styles:watch'];
+  return ['styles:watch'];
 
 };

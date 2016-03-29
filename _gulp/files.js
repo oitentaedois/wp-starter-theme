@@ -29,10 +29,10 @@ module.exports = function (prodDir) {
       .pipe(gulp.dest(prodDir));
   });
 
-  gulp.task('files:watch', function () {
+  gulp.task('files:watch', ['files'], function () {
     return gulp.watch(src, ['files']);
   });
 
-  return ['files', 'files:watch'];
+  return ['files:watch'];
   
 };
